@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ShotPattern" format=3 uid="uid://crwwjlax4edtd"]
+
+[ext_resource type="PackedScene" uid="uid://brkbx6pmpd4ik" path="res://Bullets/base_bullet.tscn" id="1_giajh"]
+[ext_resource type="Script" uid="uid://diyh76t1kbfuk" path="res://Bullets/shot_pattern.gd" id="1_y7hm5"]
+
+[resource]
+script = ExtResource("1_y7hm5")
+bullet_scene = ExtResource("1_giajh")
+metadata/_custom_type_script = "uid://diyh76t1kbfuk"
