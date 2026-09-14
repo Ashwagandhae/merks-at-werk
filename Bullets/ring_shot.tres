@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShotPattern" format=3 uid="uid://bkwn01b6xsegt"]
+
+[ext_resource type="Script" uid="uid://diyh76t1kbfuk" path="res://Bullets/shot_pattern.gd" id="1_f47gu"]
+[ext_resource type="PackedScene" uid="uid://brkbx6pmpd4ik" path="res://Bullets/base_bullet.tscn" id="1_l30te"]
+
+[resource]
+script = ExtResource("1_f47gu")
+pattern_name = "Ring Shot"
+bullet_scene = ExtResource("1_l30te")
+bullet_count = 12
+spread_angle = 30.0
+metadata/_custom_type_script = "uid://diyh76t1kbfuk"

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_b4t2g")
+pattern_name = "Tri Shot"
 bullet_scene = ExtResource("1_eu721")
 bullet_count = 3
 spread_angle = 45.0
