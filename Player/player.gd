@@ -67,8 +67,8 @@ func _on_ShootSpeed_timeout():
 	shooting_enabled = true
 
 func shoot():
-	shot_pattern.fire(SpawnPos.global_position, axis, get_tree().current_scene)
-	back_shot_pattern.fire(SpawnPos.global_position, -axis, get_tree().current_scene)
+	shot_pattern.fire(SpawnPos.global_position, rad_to_deg(axis.angle()), get_tree().current_scene)
+	back_shot_pattern.fire(SpawnPosBehind.global_position, rad_to_deg((-axis).angle()), get_tree().current_scene)
 	$ShootSpeed.start(shot_pattern.firing_rate)
 	shooting_enabled = false
 

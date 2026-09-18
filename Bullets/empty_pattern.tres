@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShotPattern" format=3 uid="uid://u7t74ubkwo80"]
+
+[ext_resource type="PackedScene" uid="uid://brkbx6pmpd4ik" path="res://Bullets/base_bullet.tscn" id="1_74y2m"]
+[ext_resource type="Script" uid="uid://diyh76t1kbfuk" path="res://Bullets/shot_pattern.gd" id="2_lxjqh"]
+
+[resource]
+script = ExtResource("2_lxjqh")
+bullet_scene = ExtResource("1_74y2m")
+firing_rate = 0.0
+bullet_count = 0
+metadata/_custom_type_script = "uid://diyh76t1kbfuk"

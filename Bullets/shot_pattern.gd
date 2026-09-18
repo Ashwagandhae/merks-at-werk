@@ -6,13 +6,13 @@ class_name ShotPattern
 @export var firing_rate  : float = 0.3
 @export var bullet_count : int = 1
 @export var spread_angle : float = 0 #in degrees
-
 var Bullet = preload("res://Bullets/base_bullet.gd")
 
-func fire(spawn_pos: Vector2, base_dir: Vector2, tree_root):
+func fire(spawn_pos: Vector2, base_angle, tree_root):
+	if bullet_count == 0 or firing_rate == 0:
+		return
 	if not bullet_scene:
 		return
-	var base_angle = snapped(rad_to_deg(base_dir.angle()), 0.1)
 	var start_angle = base_angle - spread_angle / 2
 	var angle_step = spread_angle if bullet_count == 1 else spread_angle / (bullet_count - 1)
 	var current_angle = start_angle
