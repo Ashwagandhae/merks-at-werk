@@ -1,10 +1,18 @@
-[gd_scene format=3 uid="uid://cvr8f7hblji7y"]
+[gd_scene format=3 uid="uid://dpmq3ddy3s6g6"]
 
-[ext_resource type="Script" uid="uid://c56r3t5drklud" path="res://HUD/hud.gd" id="1_h61sl"]
+[sub_resource type="GDScript" id="GDScript_4t24e"]
+script/source = "extends CanvasLayer
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"Pause\"):
+		get_tree().paused = !get_tree().paused
+		$Message/Label.visible = !$Message/Label.visible
+"
 
 [node name="HUD" type="CanvasLayer" unique_id=180893274]
 process_mode = 3
-script = ExtResource("1_h61sl")
+script = SubResource("GDScript_4t24e")
 
 [node name="Message" type="Control" parent="." unique_id=1155759886]
 custom_minimum_size = Vector2(300, 0)
