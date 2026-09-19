@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://mlj06lkmtvw2"]
+
+[ext_resource type="Script" uid="uid://cf87m5fgmd3tf" path="res://Air Turret/air_turret.gd" id="1_a1qjs"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_p6n10"]
+[ext_resource type="PackedScene" uid="uid://5jsy613n8yxi" path="res://Enemy/bullet_enemy.tscn" id="2_srtaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1qjs"]
+size = Vector2(32, 32)
+
+[node name="AirTurret" type="CharacterBody2D" unique_id=1216083614]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_a1qjs")
+speed = 100
+bullet_scene = ExtResource("2_srtaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=460500415]
+scale = Vector2(0.278, 0.25)
+texture = ExtResource("1_p6n10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=525970869]
+shape = SubResource("RectangleShape2D_a1qjs")
+
+[node name="DirectionTimer" type="Timer" parent="." unique_id=1659403245]
+wait_time = 5.0
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1002393215]
+autostart = true
+
+[connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

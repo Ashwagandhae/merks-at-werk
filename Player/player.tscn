@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://80kl10p8d3vr" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bbp8oqgqw25sy" path="res://Player/arrow.png" id="2_btcbx"]
 [ext_resource type="Resource" uid="uid://crwwjlax4edtd" path="res://Bullets/default_pattern.tres" id="2_k53q1"]
+[ext_resource type="Resource" uid="uid://dxpcuer07gm7" path="res://Bullets/tri_shot.tres" id="3_fhl08"]
 [ext_resource type="PackedScene" uid="uid://cvr8f7hblji7y" path="res://HUD/hud.tscn" id="3_btcbx"]
 [ext_resource type="PackedScene" uid="uid://brkbx6pmpd4ik" path="res://Bullets/base_bullet.tscn" id="4_fhl08"]
 
@@ -34,7 +35,5 @@ position = Vector2(-8, 0)
 [node name="ShootSpeed" type="Timer" parent="." unique_id=498776849]
 wait_time = 0.3
 one_shot = true
-
-[node name="HUD" parent="." unique_id=180893274 instance=ExtResource("3_btcbx")]
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_ShootSpeed_timeout"]
