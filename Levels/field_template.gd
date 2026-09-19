@@ -1,12 +1,7 @@
 extends Node2D
 
 @export var spawn_positon: Vector2 = Vector2.ZERO
+@export var bonus_points: int = 40
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	Globals.field_time_left = $BadTimer.time_left
