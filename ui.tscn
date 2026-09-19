@@ -9,6 +9,10 @@ load_path = "res://.godot/imported/main_ui_sprite.PNG-35bb19244ff73f8f119e936639
 font = ExtResource("2_27fn8")
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_fyqef"]
+font = ExtResource("2_27fn8")
+font_size = 32
+
 [node name="UI" type="Control" unique_id=1763726028]
 layout_mode = 3
 anchors_preset = 15
@@ -41,3 +45,14 @@ offset_right = 296.0
 offset_bottom = 466.0
 text = "$ 0"
 label_settings = SubResource("LabelSettings_qnusm")
+
+[node name="timeText" type="Label" parent="." unique_id=2020499012]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Time:"
+label_settings = SubResource("LabelSettings_fyqef")

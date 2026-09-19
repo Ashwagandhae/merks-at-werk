@@ -2,5 +2,7 @@
 
 [ext_resource type="Script" uid="uid://eaivqroghwin" path="res://Levels/field_template.gd" id="1_o5q5k"]
 
-[node name="FieldTemplate" type="Node2D" unique_id=1508715508]
+[node name="BaseField" type="Node2D" unique_id=1508715508]
 script = ExtResource("1_o5q5k")
+
+[node name="BadTimer" type="Timer" parent="." unique_id=1347941109]
