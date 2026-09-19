@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbp8oqgqw25sy" path="res://Player/arrow.png" id="2_f2qha"]
 
 [node name="MissileEnemy" unique_id=1721345674 instance=ExtResource("1_ira0i")]
-collision_mask = 1
+collision_mask = 3
 motion_mode = 1
 speed = 300.0
 homing = true
