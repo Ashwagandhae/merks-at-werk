@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://r136u0f8rqfk" path="res://Station/station.tscn" id="2_xhp28"]
 [ext_resource type="PackedScene" uid="uid://cuetmviqorir" path="res://Enemy/missile_enemy.tscn" id="3_m1rnc"]
 [ext_resource type="PackedScene" uid="uid://5jsy613n8yxi" path="res://Enemy/bullet_enemy.tscn" id="4_dqqfx"]
+[ext_resource type="PackedScene" uid="uid://mlj06lkmtvw2" path="res://Air Turret/air_turret.tscn" id="5_qo2hy"]
 
 [node name="DemoField" type="Node2D" unique_id=1568139286]
 
@@ -23,3 +24,6 @@ position = Vector2(-400, 31)
 position = Vector2(249, 179)
 missile_scene = ExtResource("3_m1rnc")
 bullet_scene = ExtResource("4_dqqfx")
+
+[node name="air_turret" parent="." unique_id=1216083614 instance=ExtResource("5_qo2hy")]
+position = Vector2(193, -50)
