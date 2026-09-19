@@ -6,5 +6,3 @@
 script = ExtResource("1_o5q5k")
 
 [node name="BadTimer" type="Timer" parent="." unique_id=1347941109]
-
-[connection signal="timeout" from="BadTimer" to="." method="_on_bad_timer_timeout"]
