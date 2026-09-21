@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Merks at Werk (Correct)"
+config/name="Merks at Werk"
 run/main_scene="uid://cqow47bch5ocs"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://4q335xxs2p"
