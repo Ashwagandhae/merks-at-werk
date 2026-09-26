@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var missile_scene: PackedScene
-@export var bullet_scene: PackedScene
+@export var missile_scene: PackedScene = preload("res://Enemy/missile_enemy.tscn")
+@export var bullet_scene: PackedScene = preload("res://Bullets/station_bullet.tscn")
 
 var is_destroyed = false
 
@@ -58,6 +58,8 @@ func _on_missle_spawn_timer_timeout() -> void:
 
 func _on_bullet_timer_timeout() -> void:
 	
+	return
+	print(bullet_scene, "HEHEH")
 	if bullet_scene == null:
 		return
 		
