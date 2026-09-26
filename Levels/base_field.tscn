@@ -1,44 +1,22 @@
 [gd_scene format=4 uid="uid://w1soc5n7vwdm"]
 
-[ext_resource type="Script" uid="uid://c6inu0euub11a" path="res://Levels/field_template.gd" id="1_o5q5k"]
-[ext_resource type="Texture2D" uid="uid://bxct7xx8nhxtm" path="res://Test Tile Set/test_tile_set.png" id="2_57y80"]
+[node name="BaseField" type="Node2D" unique_id=1026051808]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4xow"]
-texture = ExtResource("2_57y80")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
+[node name="SpawnPosition" type="Marker2D" parent="." unique_id=1776380402]
 
-[sub_resource type="TileSet" id="TileSet_3sutc"]
-sources/0 = SubResource("TileSetAtlasSource_y4xow")
-[ext_resource type="PackedScene" uid="uid://cuetmviqorir" path="res://Enemy/missile_enemy.tscn" id="2_57y80"]
+[node name="Enemies" type="Node2D" parent="." unique_id=1066167768]
 
-[node name="BaseField" type="Node2D" unique_id=1508715508 node_paths=PackedStringArray("field_timer", "level_timer")]
-script = ExtResource("1_5ka6s")
-timer_enabled = true
-field_timer = NodePath("FieldTimer")
-level_timer = NodePath("SpawnTimer")
-missile_scene = ExtResource("2_57y80")
+[node name="Stations" type="Node2D" parent="." unique_id=1360918004]
 
-[node name="Spawn Position" type="Marker2D" parent="." unique_id=551322937]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1386508579]
 
-[node name="Enemies" type="Node2D" parent="." unique_id=97788232]
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=1690788066]
 
-[node name="Stations" type="Node2D" parent="." unique_id=152400758]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1962868829]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackground" unique_id=821693160]
-position = Vector2(0, 22)
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackground/Parallax2D" unique_id=1299603768]
 tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAEAAAD//wIAAAABAAEAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAACAAIAAAABAAAAAAACAAEAAAABAAAAAAACAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAAAAAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAAAAP//AAABAAAAAAD/////AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAABAAAAAAD9/wIAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAABAAAAAAD//wMAAAABAAAAAAAAAAMAAAAAAAAAAAABAAMAAAABAAAAAAD9/wEAAAABAAAAAAD9/wAAAAABAAAAAAD9////AAABAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAGAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAGAAIAAAAAAAEAAAAEAAIAAAABAAEAAAAEAP3/AAABAAEAAAAGAP3/AAAAAAEAAAAFAP3/AAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAGAAAAAAAAAAEAAAAEAAAAAAABAAEAAAADAAYAAAABAAEAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAEAAAA=")
-tile_set = SubResource("TileSet_3sutc")
 
-[node name="FieldTimer" type="Timer" parent="." unique_id=1347941109]
+[node name="FieldTimer" type="Timer" parent="." unique_id=1469194110]
 wait_time = 60.0
 
-[node name="SpawnTimer" type="Timer" parent="." unique_id=2011516071]
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2117181400]
 wait_time = 300.0
-
-[connection signal="timeout" from="FieldTimer" to="." method="_on_bad_timer_timeout"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
