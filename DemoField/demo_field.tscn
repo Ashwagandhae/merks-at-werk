@@ -34,8 +34,6 @@ missile_scene = ExtResource("3_m1rnc")
 bullet_scene = ExtResource("4_dqqfx")
 
 [node name="air_turret" parent="." unique_id=1216083614 instance=ExtResource("5_qo2hy")]
-process_mode = 4
-visible = false
 position = Vector2(193, -50)
 
 [node name="FieldTimer" type="Timer" parent="." unique_id=899877556]
