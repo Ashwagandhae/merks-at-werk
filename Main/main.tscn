@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bjljqausbacjw" path="res://HUD/ui.tscn" id="7_ib3t1"]
 
 [node name="Main" type="Node2D" unique_id=2000310332]
-visible = false
 script = ExtResource("1_k3v36")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1732974511]
@@ -31,6 +30,7 @@ one_shot = true
 script = ExtResource("4_f6fdm")
 
 [node name="DemoField" parent="." unique_id=1026051808 instance=ExtResource("5_liyct")]
+script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1767120346]
 

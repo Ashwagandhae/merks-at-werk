@@ -1,13 +1,11 @@
 [gd_scene format=4 uid="uid://w1soc5n7vwdm"]
 
+[ext_resource type="Script" uid="uid://dfnhv56ta5e4" path="res://Levels/base_field.gd" id="1_5ka6s"]
+
 [node name="BaseField" type="Node2D" unique_id=1026051808]
+script = ExtResource("1_5ka6s")
 
 [node name="SpawnPosition" type="Marker2D" parent="." unique_id=1776380402]
-[node name="BaseField" type="Node2D" unique_id=1508715508 node_paths=PackedStringArray("field_timer")]
-script = ExtResource("1_5ka6s")
-timer_enabled = true
-field_timer = NodePath("FieldTimer")
-missile_scene = ExtResource("2_57y80")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1066167768]
 

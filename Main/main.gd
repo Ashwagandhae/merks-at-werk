@@ -1,10 +1,8 @@
 extends Node2D
 
-@onready var level_container = $LevelContainer
+#@onready var level_container = $LevelContainer
 var current_level
 var stations_cleared = false
-
-
 
 func _ready() -> void:
 	
