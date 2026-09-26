@@ -58,7 +58,6 @@ func _on_missle_spawn_timer_timeout() -> void:
 
 func _on_bullet_timer_timeout() -> void:
 	
-	return
 	print(bullet_scene, "HEHEH")
 	if bullet_scene == null:
 		return
@@ -79,6 +78,7 @@ func _on_bullet_timer_timeout() -> void:
 			
 		bullet.global_position = closest_weak.global_position
 		bullet.axis = (Globals.player_position - bullet.global_position).normalized()
-			
+		bullet.look_at(Globals.player_position)
+		
 		get_tree().current_scene.add_child(bullet)
 			
