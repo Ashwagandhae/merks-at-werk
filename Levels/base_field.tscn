@@ -3,6 +3,11 @@
 [node name="BaseField" type="Node2D" unique_id=1026051808]
 
 [node name="SpawnPosition" type="Marker2D" parent="." unique_id=1776380402]
+[node name="BaseField" type="Node2D" unique_id=1508715508 node_paths=PackedStringArray("field_timer")]
+script = ExtResource("1_5ka6s")
+timer_enabled = true
+field_timer = NodePath("FieldTimer")
+missile_scene = ExtResource("2_57y80")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1066167768]
 

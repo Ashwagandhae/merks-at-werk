@@ -5,10 +5,14 @@
 [ext_resource type="Script" uid="uid://bqjbnbfd7jlob" path="res://Player/camera.gd" id="3_ib3t1"]
 [ext_resource type="Script" uid="uid://cxfmjbimw3b1d" path="res://enemy_spawner.gd" id="4_f6fdm"]
 [ext_resource type="PackedScene" uid="uid://lt0yp7te8gim" path="res://Levels/demo_field.tscn" id="5_liyct"]
+[ext_resource type="PackedScene" uid="uid://dwuu4ml8r3hb7" path="res://Main/world.tscn" id="6_liyct"]
 [ext_resource type="PackedScene" uid="uid://bjljqausbacjw" path="res://HUD/ui.tscn" id="7_ib3t1"]
 
 [node name="Main" type="Node2D" unique_id=2000310332]
+visible = false
 script = ExtResource("1_k3v36")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1732974511]
 
 [node name="Player" parent="." unique_id=1576711874 instance=ExtResource("2_liyct")]
 position = Vector2(0, 2)
@@ -32,6 +36,6 @@ script = ExtResource("4_f6fdm")
 
 [node name="UI" parent="CanvasLayer" unique_id=1763726028 instance=ExtResource("7_ib3t1")]
 
-[node name="LevelContainer" type="Node2D" parent="." unique_id=2076192256]
+[node name="World" parent="." unique_id=56220943 instance=ExtResource("6_liyct")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
