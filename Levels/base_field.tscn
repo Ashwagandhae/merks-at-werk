@@ -1,19 +1,27 @@
-[gd_scene format=3 uid="uid://w1soc5n7vwdm"]
+[gd_scene format=4 uid="uid://w1soc5n7vwdm"]
 
-[ext_resource type="Script" uid="uid://gxuop1xb6hk7" path="res://Levels/base_field.gd" id="1_5ka6s"]
-[ext_resource type="PackedScene" uid="uid://cuetmviqorir" path="res://Enemy/missile_enemy.tscn" id="2_57y80"]
+[node name="BaseField" type="Node2D" unique_id=1026051808]
 
+[node name="SpawnPosition" type="Marker2D" parent="." unique_id=1776380402]
 [node name="BaseField" type="Node2D" unique_id=1508715508 node_paths=PackedStringArray("field_timer")]
 script = ExtResource("1_5ka6s")
 timer_enabled = true
 field_timer = NodePath("FieldTimer")
 missile_scene = ExtResource("2_57y80")
 
-[node name="FieldTimer" type="Timer" parent="." unique_id=1347941109]
+[node name="Enemies" type="Node2D" parent="." unique_id=1066167768]
+
+[node name="Stations" type="Node2D" parent="." unique_id=1360918004]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1386508579]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground" unique_id=1690788066]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackground/Parallax2D" unique_id=1299603768]
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAEAAAD//wIAAAABAAEAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAADAAAAAAABAAAAAAADAP//AAABAAAAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAACAAIAAAABAAAAAAACAAEAAAABAAAAAAACAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAAAAAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAAAAP//AAABAAAAAAD/////AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAABAAAAAAD9/wIAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAABAAAAAAD//wMAAAABAAAAAAAAAAMAAAAAAAAAAAABAAMAAAABAAAAAAD9/wEAAAABAAAAAAD9/wAAAAABAAAAAAD9////AAABAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAGAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAGAAIAAAAAAAEAAAAEAAIAAAABAAEAAAAEAP3/AAABAAEAAAAGAP3/AAAAAAEAAAAFAP3/AAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAGAAAAAAAAAAEAAAAEAAAAAAABAAEAAAADAAYAAAABAAEAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAEAAAA=")
+
+[node name="FieldTimer" type="Timer" parent="." unique_id=1469194110]
 wait_time = 60.0
 
-[node name="SpawnTimer" type="Timer" parent="." unique_id=2011516071]
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2117181400]
 wait_time = 300.0
-
-[connection signal="timeout" from="FieldTimer" to="." method="_on_bad_timer_timeout"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
