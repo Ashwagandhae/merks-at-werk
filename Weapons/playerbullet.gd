@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var speed = 800
 var damage = 1
 var homing_degrees = 0
@@ -21,9 +20,7 @@ func load_stats(data):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-
-
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if homing_degrees != 0:
