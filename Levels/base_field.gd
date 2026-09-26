@@ -19,7 +19,6 @@ func _ready():
 func _process(delta: float) -> void:
 	if timer_enabled:
 		Globals.field_time_left = field_timer.time_left
-
 func _on_SpawnTimer_timeout() -> void:
 	var missile = missile_scene.instantiate()
 	var screen_size = DisplayServer.screen_get_size()
