@@ -5,6 +5,7 @@ extends Control
 
 @export var pointer_offset: Vector2 = Vector2(-40, 0)
 @export var tween_duration: float = 0.15
+@export var pause_menu : Control
 
 var current_tween: Tween
 
@@ -39,6 +40,7 @@ func _on_button_unhover() -> void:
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Main/main.tscn")
 
+	
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
@@ -46,3 +48,8 @@ func _on_quit_button_pressed() -> void:
 
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://HUD/options.tscn")
+
+
+func _on_resume_pressed() -> void:
+	get_tree().paused = false
+	pause_menu.visible = false
