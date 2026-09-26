@@ -14,9 +14,6 @@ var current_field
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_field(0)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func load_level(index : int):
 	if 0 <= index and index < levels.size():

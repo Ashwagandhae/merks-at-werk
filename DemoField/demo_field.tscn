@@ -7,14 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://5jsy613n8yxi" path="res://Enemy/bullet_enemy.tscn" id="4_dqqfx"]
 [ext_resource type="PackedScene" uid="uid://mlj06lkmtvw2" path="res://Air Turret/air_turret.tscn" id="5_qo2hy"]
 
-[node name="DemoField" type="Node2D" unique_id=1568139286 node_paths=PackedStringArray("field_timer", "spawn_timer")]
+[node name="DemoField" type="Node2D" unique_id=1568139286]
 script = ExtResource("1_x46ey")
-spawn_positon = null
-bonus_points = null
-timer_enabled = true
-field_timer = NodePath("FieldTimer")
-spawn_timer = NodePath("SpawnTimer")
-missile_scene = ExtResource("3_m1rnc")
 
 [node name="EnemyUp" parent="." unique_id=1721345674 instance=ExtResource("1_22usk")]
 position = Vector2(30, -320)
