@@ -5,12 +5,12 @@ var news_scroll_speed: int = 200
 
 @export var ticker_message: String
 var ticker_increment: int = 1
-@export var pause_menu: Control
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		get_tree().paused = !get_tree().paused
-		pause_menu.visible = !pause_menu.visible
+		$PauseMenu.visible = !$PauseMenu.visible
 
 	# Handle News Ticker
 	if ticker_increment <= len(ticker_message):
