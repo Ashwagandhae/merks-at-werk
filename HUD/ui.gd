@@ -7,7 +7,7 @@ var news_scroll_speed: int = 200
 var ticker_increment: int = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		get_tree().paused = !get_tree().paused
 		$PauseMenu.visible = !$PauseMenu.visible
