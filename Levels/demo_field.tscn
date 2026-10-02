@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://Enemy/enemy.tscn" id="2_5behj"]
 [ext_resource type="PackedScene" uid="uid://mlj06lkmtvw2" path="res://Air Turret/air_turret.tscn" id="3_fxm27"]
 [ext_resource type="PackedScene" uid="uid://r136u0f8rqfk" path="res://Station/station.tscn" id="4_tiqlc"]
-[ext_resource type="PackedScene" uid="uid://cuetmviqorir" path="res://Enemy/missile_enemy.tscn" id="5_dm8rc"]
-[ext_resource type="PackedScene" uid="uid://5jsy613n8yxi" path="res://Enemy/bullet_enemy.tscn" id="6_eregx"]
 [ext_resource type="Texture2D" uid="uid://bxct7xx8nhxtm" path="res://Test Tile Set/test_tile_set.png" id="7_5behj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxm27"]
@@ -41,8 +39,6 @@ position = Vector2(193, -50)
 
 [node name="Station" parent="Stations" parent_id_path=PackedInt32Array(1360918004) index="0" unique_id=216108015 instance=ExtResource("4_tiqlc")]
 position = Vector2(249, 179)
-missile_scene = ExtResource("5_dm8rc")
-bullet_scene = ExtResource("6_eregx")
 
 [node name="Parallax2D" parent="ParallaxBackground" parent_id_path=PackedInt32Array(1386508579) index="0" unique_id=1690788066]
 scroll_scale = Vector2(1.4, 1.4)

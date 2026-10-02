@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqw14lxk8igvv"]
+
+[ext_resource type="Script" uid="uid://bfixv0glkbx41" path="res://Bullets/station_bullet.gd" id="1_un7u5"]
+[ext_resource type="Texture2D" uid="uid://doecb30wltyvq" path="res://Player/bullet.png" id="2_mcw3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk0nm"]
+size = Vector2(4, 12)
+
+[node name="StationBullet" type="Area2D" unique_id=1825510795]
+collision_layer = 8
+script = ExtResource("1_un7u5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857497784]
+modulate = Color(1, 0, 0, 1)
+rotation = 1.5707964
+texture = ExtResource("2_mcw3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185184316]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_xk0nm")

@@ -52,8 +52,7 @@ func move_default(delta: float):
 	velocity += accel
 	velocity = velocity.limit_length(MAX_SPEED)
 
-
-func rotate_default(delta: float):
+func rotate_default(_delta: float):
 	rotation_degrees = rad_to_deg(atan2(axis.y, axis.x))
 
 
@@ -68,7 +67,7 @@ func apply_friction(amount: float):
 		velocity = Vector2.ZERO
 
 
-func _process(delta: float):
+func _process(_delta: float):
 	if Input.is_action_pressed("Shoot") and shooting_enabled:
 		shoot()
 

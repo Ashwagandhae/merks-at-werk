@@ -5,9 +5,11 @@ extends Node2D
 @export var spawn_positon : Vector2 = Vector2.ZERO
 @export var bonus_points  : int = 40
 @export var timer_enabled : bool = false
-@export var field_timer   : Node
-@export var spawn_timer   : Node
-@export var missile_scene : PackedScene
+
+@export var missile_scene : PackedScene = preload("res://Enemy/missile_enemy.tscn")
+
+@onready var field_timer: Node = $FieldTimer
+@onready var spawn_timer: Node = $SpawnTimer
 
 
 
@@ -19,7 +21,7 @@ func _ready():
 	print("start spawn timer")
 	spawn_timer.start()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if timer_enabled:
 		Globals.field_time_left = field_timer.time_left
 func _on_SpawnTimer_timeout() -> void:
