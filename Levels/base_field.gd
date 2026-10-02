@@ -1,12 +1,15 @@
 class_name BaseField
 extends Node2D
 
+@export var map_size : Vector2 = Vector2(2560, 2560)
 @export var spawn_positon : Vector2 = Vector2.ZERO
 @export var bonus_points  : int = 40
 @export var timer_enabled : bool = false
 @export var field_timer   : Node
 @export var spawn_timer   : Node
 @export var missile_scene : PackedScene
+
+
 
 func _ready():
 	Globals.player_position = spawn_positon

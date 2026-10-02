@@ -12,13 +12,11 @@ const FRICTION = 5400
 @export var back_shot_pattern : ShotPattern
 @export var bullet_scene : PackedScene
 
-#var Bullet = preload("res://Bullets/base_bullet.tscn")
-
 @onready var input_axis = Vector2.ZERO
 @onready var axis = Vector2.UP
 @onready var SpawnPos = $SpawnPos
 @onready var SpawnPosBehind = $SpawnPosBehind
-
+@onready var World = get_parent().get_node("World")
 @onready var current_acceleration = 0
 
 var shooting_enabled = true
@@ -26,15 +24,22 @@ var shooting_enabled = true
 @export var health: int = 5
 
 func _physics_process(delta: float) -> void:
-	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	move_default(delta)
 	rotate_default(delta)
 	move_and_slide()
 	
-	global_position = Vector2(clamp(global_position.x, -640, 640), clamp(global_position.y, -360, 360))
-	Globals.player_position = global_position
+	"""if global_position.x > World.map_size.x:
+		global_position.x -= World.map_size.x
+	elif global_position.x < 0:
+		global_position.x += World.map_size.x
+
+	if global_position.y > World.map_size.y:
+		global_position.y -= World.map_size.y
+	elif global_position.y < 0:
+		global_position.y += World.map_size.y
+	Globals.player_position = global_position"""
 	
 func move_default(delta: float):
 	input_axis = get_input_axis()
@@ -47,11 +52,14 @@ func move_default(delta: float):
 	velocity += accel
 	velocity = velocity.limit_length(MAX_SPEED)
 
+
 func rotate_default(delta: float):
 	rotation_degrees = rad_to_deg(atan2(axis.y, axis.x))
 
+
 func get_input_axis():
 	return Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Up", "Down"))
+
 
 func apply_friction(amount: float):
 	if velocity.length() > amount:
@@ -59,18 +67,22 @@ func apply_friction(amount: float):
 	else:
 		velocity = Vector2.ZERO
 
+
 func _process(delta: float):
 	if Input.is_action_pressed("Shoot") and shooting_enabled:
 		shoot()
 
+
 func _on_ShootSpeed_timeout():
 	shooting_enabled = true
+
 
 func shoot():
 	shot_pattern.fire(SpawnPos.global_position, rad_to_deg(axis.angle()), get_tree().current_scene)
 	back_shot_pattern.fire(SpawnPosBehind.global_position, rad_to_deg((-axis).angle()), get_tree().current_scene)
 	$ShootSpeed.start(shot_pattern.firing_rate)
 	shooting_enabled = false
+
 
 #func shoot_volley_spread():
 	#var bullet: Object
