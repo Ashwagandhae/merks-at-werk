@@ -9,6 +9,7 @@ size = Vector2(4, 12)
 [node name="StationBullet" type="Area2D" unique_id=1825510795]
 collision_layer = 8
 script = ExtResource("1_un7u5")
+speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1857497784]
 modulate = Color(1, 0, 0, 1)

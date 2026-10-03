@@ -10,6 +10,7 @@ var levels : Array[String] = [
 var current_level_index : int = 0
 var current_level
 var current_field
+var map_size : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,5 +28,6 @@ func load_field(index : int):
 			current_field.queue_free()
 		current_field = load("res://Levels/demo_field.tscn").instantiate()
 		add_child(current_field)
+		map_size = current_field.map_size
 		print(current_field)
 		print("demo_field loaded")
