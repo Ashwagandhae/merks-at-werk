@@ -30,18 +30,19 @@ func _physics_process(delta: float) -> void:
 	rotate_default(delta)
 	move_and_slide()
 	
-	"""if global_position.x > World.map_size.x:
+	if global_position.x > World.map_size.x/2:
 		global_position.x -= World.map_size.x
-	elif global_position.x < 0:
+	elif global_position.x < -World.map_size.x/2:
 		global_position.x += World.map_size.x
 
-	if global_position.y > World.map_size.y:
+	if global_position.y > World.map_size.y/2:
 		global_position.y -= World.map_size.y
-	elif global_position.y < 0:
+	elif global_position.y < -World.map_size.y/2:
 		global_position.y += World.map_size.y
-	Globals.player_position = global_position"""
+	Globals.player_position = global_position
 	
 func move_default(delta: float):
+	print(snapped(global_position, Vector2(1,1)))
 	input_axis = get_input_axis()
 	if input_axis != Vector2.ZERO:
 		current_acceleration = ACCELERATION
