@@ -24,6 +24,9 @@ var shooting_enabled = true
 @export var health: int = 5
 
 func _physics_process(delta: float) -> void:
+	
+	Globals.player_position = global_position
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	move_default(delta)

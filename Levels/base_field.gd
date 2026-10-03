@@ -11,8 +11,6 @@ extends Node2D
 @onready var field_timer: Node = $FieldTimer
 @onready var spawn_timer: Node = $SpawnTimer
 
-
-
 func _ready():
 	Globals.player_position = spawn_positon
 	if timer_enabled:
@@ -20,6 +18,9 @@ func _ready():
 		field_timer.start()
 	print("start spawn timer")
 	spawn_timer.start()
+	
+	var tile_map = $ParallaxBackground/Parallax2D/TileMapLayer
+	map_size = Vector2(tile_map.get_used_rect().size) * Vector2(tile_map.tile_set.tile_size) * tile_map.scale
 
 func _process(_delta: float) -> void:
 	if timer_enabled:
