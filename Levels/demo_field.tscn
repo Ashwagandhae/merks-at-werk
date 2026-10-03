@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://w1soc5n7vwdm" path="res://Levels/base_field.tscn" id="1_0glmm"]
 [ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://Enemy/enemy.tscn" id="2_5behj"]
-[ext_resource type="PackedScene" uid="uid://mlj06lkmtvw2" path="res://Air Turret/air_turret.tscn" id="3_fxm27"]
+[ext_resource type="PackedScene" uid="uid://mlj06lkmtvw2" path="res://AirTurret/air_turret.tscn" id="3_fxm27"]
 [ext_resource type="PackedScene" uid="uid://r136u0f8rqfk" path="res://Station/station.tscn" id="4_tiqlc"]
 [ext_resource type="Texture2D" uid="uid://bxct7xx8nhxtm" path="res://Test Tile Set/test_tile_set.png" id="7_5behj"]
 
@@ -16,25 +16,25 @@ texture = ExtResource("7_5behj")
 [sub_resource type="TileSet" id="TileSet_ib3t1"]
 sources/0 = SubResource("TileSetAtlasSource_fxm27")
 
-[node name="DemoField" unique_id=1026051808 node_paths=PackedStringArray("field_timer", "spawn_timer") instance=ExtResource("1_0glmm")]
+[node name="DemoField" unique_id=1026051808 instance=ExtResource("1_0glmm")]
 timer_enabled = true
-field_timer = NodePath("FieldTimer")
-spawn_timer = NodePath("SpawnTimer")
-missile_scene = ExtResource("5_dm8rc")
 
-[node name="EnemyUp" parent="Enemies" parent_id_path=PackedInt32Array(1066167768) index="0" unique_id=1721345674 instance=ExtResource("2_5behj")]
+[node name="Enemies" parent="." index="1" unique_id=1066167768]
+visible = false
+
+[node name="EnemyUp" parent="Enemies" index="0" unique_id=1721345674 instance=ExtResource("2_5behj")]
 position = Vector2(30, -320)
 
-[node name="EnemyRight" parent="Enemies" parent_id_path=PackedInt32Array(1066167768) index="1" unique_id=1408656595 instance=ExtResource("2_5behj")]
+[node name="EnemyRight" parent="Enemies" index="1" unique_id=1408656595 instance=ExtResource("2_5behj")]
 position = Vector2(400, -30)
 
-[node name="EnemyDown" parent="Enemies" parent_id_path=PackedInt32Array(1066167768) index="2" unique_id=5736673 instance=ExtResource("2_5behj")]
+[node name="EnemyDown" parent="Enemies" index="2" unique_id=5736673 instance=ExtResource("2_5behj")]
 position = Vector2(-29, 320)
 
-[node name="EnemyLeft" parent="Enemies" parent_id_path=PackedInt32Array(1066167768) index="3" unique_id=559241979 instance=ExtResource("2_5behj")]
+[node name="EnemyLeft" parent="Enemies" index="3" unique_id=559241979 instance=ExtResource("2_5behj")]
 position = Vector2(-400, 31)
 
-[node name="AirTurret" parent="Enemies" parent_id_path=PackedInt32Array(1066167768) index="4" unique_id=1216083614 instance=ExtResource("3_fxm27")]
+[node name="AirTurret" parent="Enemies" index="4" unique_id=1216083614 instance=ExtResource("3_fxm27")]
 position = Vector2(193, -50)
 
 [node name="Station" parent="Stations" parent_id_path=PackedInt32Array(1360918004) index="0" unique_id=216108015 instance=ExtResource("4_tiqlc")]
