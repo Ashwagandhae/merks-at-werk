@@ -33,16 +33,34 @@ func _physics_process(delta: float) -> void:
 	rotate_default(delta)
 	move_and_slide()
 	
-	"""if global_position.x > World.map_size.x:
-		global_position.x -= World.map_size.x
-	elif global_position.x < 0:
-		global_position.x += World.map_size.x
+	print(World.map_size)
+	print(World.bounds_positive)
+	print(World.bounds_negative)
+	
+	# 2. Define your 4 coordinates as Vector2 points
+	var coords = PackedVector2Array([
+		Vector2(World.bounds_negative.x, World.bounds_negative.y),       # Top-Left
+		Vector2(World.bounds_positive.x, World.bounds_negative.y),     # Top-Right
+		Vector2(World.bounds_positive.x, World.bounds_positive.y),   # Bottom-Right
+		Vector2(World.bounds_negative.x, World.bounds_positive.y)      # Bottom-Left
+	])
+	
+	for i in range(4):
+		var sprite = Sprite2D.new()
+		sprite.texture = load("res://icon.svg")
+		sprite.global_position = coords[i]
+		get_parent().add_child(sprite)
+	
+	if global_position.x >= World.bounds_positive.x:
+		global_position.x = World.bounds_negative.x
+	elif global_position.x <= World.bounds_negative.x:
+		global_position.x = World.bounds_positive.x
 
-	if global_position.y > World.map_size.y:
-		global_position.y -= World.map_size.y
-	elif global_position.y < 0:
+	if global_position.y <= World.bounds_positive.y:
 		global_position.y += World.map_size.y
-	Globals.player_position = global_position"""
+	elif global_position.y >= World.bounds_negative.y:
+		global_position.y -= World.map_size.y
+	Globals.player_position = global_position
 	
 func move_default(delta: float):
 	input_axis = get_input_axis()
