@@ -25,15 +25,22 @@ func _ready():
 	map_size = Vector2(tile_map.get_used_rect().size) * Vector2(tile_map.tile_set.tile_size) * tile_map.scale
 	get_parent().map_size = map_size
 	print(typeof(map_size), "HHHHH")
-	#$ParallaxBackground/Parallax2D.repeat_size = map_size
-	print(Vector2(tile_map.get_used_rect().position) * Vector2(tile_map.tile_set.tile_size) * tile_map.scale)
-	var bounds_positive = Vector2(tile_map.get_used_rect().position) * Vector2(tile_map.tile_set.tile_size) * tile_map.scale + Vector2(map_size.x, 0)
-	var bounds_negative = Vector2(tile_map.get_used_rect().position) * Vector2(tile_map.tile_set.tile_size) * tile_map.scale + Vector2(0, map_size.y)
+	$ParallaxBackground/Parallax2D.repeat_size = map_size
+	$ParallaxBackground/Parallax2D.scroll_offset = spawn_positon
+	#$ParallaxBackground/Parallax2D.scroll_scale = map_size / 300
+	
+	var end = tile_map.to_global(tile_map.map_to_local(tile_map.get_used_rect().end))
+	var start = tile_map.to_global(tile_map.map_to_local(tile_map.get_used_rect().position))
+	var bounds_negative = Vector2(start[0], end[1])
+	var bounds_positive = Vector2(end[0], start[1])
 	get_parent().bounds_positive = bounds_positive
 	get_parent().bounds_negative = bounds_negative
 	
 	$ParallaxBackground/Parallax2D.scroll_offset = spawn_positon
 func _process(_delta: float) -> void:
+	print(map_size)
+	print(get_parent().bounds_positive)
+	print(get_parent().bounds_negative)
 	if timer_enabled:
 		Globals.field_time_left = field_timer.time_left
 func _on_SpawnTimer_timeout() -> void:

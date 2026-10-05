@@ -16,7 +16,7 @@ var bounds_negative : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_field(1)
+	load_field(0)
 
 func load_level(index : int):
 	if 0 <= index and index < levels.size():
@@ -38,6 +38,6 @@ func load_field(index : int):
 		var current_field_filename = "res://Levels/" + current_level_string + "/field_" + index_string + ".tscn"
 		print(current_field_filename)
 		current_field = load(current_field_filename).instantiate()
-		add_child(current_field)
-		map_size = current_field.map_size
-		print("%d loaded" % index)
+	add_child(current_field)
+	map_size = current_field.map_size
+	print("%d loaded" % index)
