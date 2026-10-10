@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	Globals.player_position = global_position
 	
 func move_default(delta: float):
-	print(snapped(global_position, Vector2(1,1)))
+	#print(snapped(global_position, Vector2(1,1)))
 	input_axis = get_input_axis()
 	if input_axis != Vector2.ZERO:
 		current_acceleration = ACCELERATION
@@ -78,6 +78,7 @@ func _on_ShootSpeed_timeout():
 
 
 func shoot():
+	print("player: axis.angle() = ", rad_to_deg(axis.angle()))
 	shot_pattern.fire(SpawnPos.global_position, rad_to_deg(axis.angle()), get_tree().current_scene)
 	back_shot_pattern.fire(SpawnPosBehind.global_position, rad_to_deg((-axis).angle()), get_tree().current_scene)
 	$ShootSpeed.start(shot_pattern.firing_rate)
