@@ -14,6 +14,8 @@ var map_size : Vector2
 var bounds_positive : Vector2
 var bounds_negative : Vector2
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_field(0)
