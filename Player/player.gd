@@ -32,20 +32,7 @@ func _physics_process(delta: float) -> void:
 	move_default(delta)
 	rotate_default(delta)
 	move_and_slide()
-	
-	if global_position.x >= World.bounds_positive.x:
-		global_position.x = World.bounds_negative.x
-	elif global_position.x <= World.bounds_negative.x:
-		global_position.x = World.bounds_positive.x
-
-	if global_position.y <= World.bounds_positive.y:
-		global_position.y = World.bounds_negative.y
-	elif global_position.y >= World.bounds_negative.y:
-		global_position.y = World.bounds_positive.y
-	Globals.player_position = global_position
-	
-	"""
-	
+		
 	if global_position.x > World.map_size.x/2:
 		global_position.x -= World.map_size.x
 	elif global_position.x < -World.map_size.x/2:
@@ -56,7 +43,6 @@ func _physics_process(delta: float) -> void:
 	elif global_position.y < -World.map_size.y/2:
 		global_position.y += World.map_size.y
 	Globals.player_position = global_position
-	"""
 	
 func move_default(delta: float):
 	#print(snapped(global_position, Vector2(1,1)))
